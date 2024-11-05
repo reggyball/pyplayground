@@ -1,0 +1,25 @@
+PROGRAM PIcalcu:
+
+START
+
+//OBTAIN USER INPUT 
+// n = determines how many times loop will run and no. of terms to be computed/printed
+
+ASK for user input of (n)
+SET initial value of (k) to 3
+PRINT intro of values
+
+//LOOP n no. of times to compute for the decimals
+START LOOP
+    INITIALIZE counter to 1
+    SET condition (iterate while counter <= n)
+        PRINT current counter value and corresponding value of (k)
+        SET value of coefficient (j) to 2x the current value of counter
+        COMPUTE for the denominator (x)
+        UPDATE the value of (k), k + computed decimal or 4/x
+        UPDATE counter +1
+        CHECK condition, IF True then repeat loop,otherwise exit loop
+END LOOP
+
+
+END.

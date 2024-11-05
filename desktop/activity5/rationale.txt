@@ -1,0 +1,28 @@
+1. What is the base case of the recursive function? Why is it the base case?
+
+The base case is the following code:
+                if n == 1:
+                    return 3
+This is the base case because it is the condtion that prevents further recursion.
+When n is 1, the function returns 3 which is the integer part of pi and represents the first term in Nilakantha series.
+Upon returning 3, the function proceeds to calculate the decimal part in pi and corresponds to the fractional terms of Nilakantha series, 
+thus completing the Nil series representation and calculates the value of pi.  
+
+Let's say n = 6, The base case will not be met since it requires n to be 1, hence it will be skipped and proceeding lines will run. 
+Variables i, j and a will be calculated. Every round of recursion, n decreases by 1 and calls itself again using the new value of n. On the second call, base case will be skipped 
+as n = 5, and new values of i, j and a will be calculated. This continues until n reaches 1 where it meets the base case. Hence, returns 3 and therefore starts the process of 
+computation of the final value. 
+
+
+2. Howdidyoucomeupwiththerecursive step of the function?
+
+Examining the Nilakantha formula, it can be seen that the calculation of fractional term is repeating. This gives the idea that recursion can be employed. 
+1. Imagine somewhere under the hood, that all the return values are set aside in memory and will be evaluated once the base case is met. Breaking the Nilakantha formula, we have the integer part and fractional part. As mentioned above, the base case provides for the integer part, as it returns 3. 
+
+2. //TLDR: This part ensures the fractional term is included in final computation. 
+Now it should be clear that, at this point, the fractional part of Nilakantha representation is still missing in the memory. The nth fractional term computation, in this case a, must be included in another return statement to ensure that it will be evaluated when call stack unwinds and performs the final computation. 
+
+3. //This part ensures that recursion will continue to run until intended. 
+After creating the base case or the stopping point and including the nth terms in the recursive step return statement, there should be an update every recursion where: (1) the problem size is reduced, that is n decreases to meet the stopping point or the condition of the base case and (2) The update will also be used to call the next recursive step. 
+
+4. Since computation of the fractional term is consistent regardless of how series is executed (loop vs recursion), most of the formula was recycled from the previous activity. Thats how the recursive step was made. 

@@ -1,0 +1,99 @@
+PROGRAM GWAcalculator:
+
+START
+
+FUNCTION check validity of course_name:
+    STRIP course_name of spaces in beginning and end 
+    SAVE stipped value to variable course_name 
+
+    WHILE (course_name is empty)
+        THEN  print error "COURSE NAME MUST HAVE A VALUE" to screen
+        ASK for correct input
+        SAVE input to course_name
+        STRIP course_name of spaces
+        SAVE stripped value to variable course_name
+    END WHILE
+
+    RETURN course_name
+
+FUNCTION check validity of raw_grade:
+    WHILE not(raw_grade is valid float AND raw_grade is between 0-100):
+        PRINT error "GRADE MUST BE NUMERIC FORMAT, 0-100"  to screen 
+        ASK user for correct input of raw_grade
+        SAVE input to variable raw_grade
+    END WHILE
+
+    RETURN raw_grade as float(decimal values)
+
+FUNCTION check validity of units:
+    Create a list of valid units (either 1.0, 2.0, 3.0 and 5.0)
+
+    WHILE not(units is valid float and units is in units list):
+        PRINT error "ENTER ONLY VALID UNITS (1.0, 2.0, 3.0, 5.0)" to screen 
+        ASK user for correct input of units
+    END WHILE
+
+    RETURN units as float(decimal values)
+
+INITIALIZE
+
+    // OBTAIN USER INPUTS
+    ASK for user input of course_name1
+        CHECK validity of course_name1
+
+    ASK for user input of the raw_grade1
+        CHECK validity of raw_grade1 (1. is numeric 2. is within 0-100)
+
+    ASK for user input for the units1
+        CHECK validity of units1 (either 1.0, 2.0, 3.0 and 5.0)
+
+    //PROCESS RAW GRADE
+
+    CREATE temporary container variable that contains value of raw_grade1
+
+    IF (raw_grade is between 96-100) 
+        THEN point_grade = 1.0
+    ELIF (raw_grade is between 90-95)
+        THEN point_grade = 1.25
+    ELIF (raw_grade is between 85-89)
+        THEN point_grade = 1.5
+    ELIF (raw_grade is between 80-84)
+        THEN point_grade = 1.75
+    ELIF (raw_grade is between 76-79)
+        THEN point_grade = 2.0
+    ELIF (raw_grade is between 72-75)
+        THEN point_grade = 2.25
+    ELIF (raw_grade is between 68-71)
+        THEN point_grade = 2.50
+    ELIF (raw_grade is between 64-67)
+        THEN point_grade = 2.75
+    ELIF (raw_grade is between 64-67)
+        THEN point_grade = 3.00
+    ELSE
+        THEN point_grade = 5.0
+    ENDIF
+
+    SET point_grade1 equal to the value of point_grade(value determined by the If conditional)
+
+    Repeat line40-74 for raw_grades 2-5, course_name 2-5, units 2-5, and point_grade 2-5.
+
+    //Compute for the GWA 
+    SUM the total units from list (units_total)
+    COMPUTE the GWA using formula:
+          GWA = ((point_grade1 * units1) + (point_grade2 * units2) + (point_grade3 * units3) + (point_grade4 * units4) + (point_grade5 *units5))/units_total
+    ROUND GWA to two decimal points
+
+    //Print the summary of grades in a four-column table
+    PRINT the header name (Course, Units, Raw Grade and UP Eq Grade)
+    PRINT the rows using format:
+        Course_name(n)  units(n) raw_grade(n)  point_grade(n)
+        Continue until n = 5 or until 5th variable set
+    PRINT the final GWA
+
+    END
+    
+
+    References:
+
+    Abriol-Santos, K. (2024) CMSC 202 Activity 3 Python Conditional Statements [Class Handout]. Myportal. https://myportal.upou.edu.ph/mod/assign/view.php?id=284785
+    Python String isnumeric() Method. W3Schools. (n.d.).  https://www.w3schools.com/python/ref_string_isnumeric.asp

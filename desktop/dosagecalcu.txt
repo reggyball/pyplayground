@@ -1,0 +1,63 @@
+PROGRAM Paracetamol Dosage Calculator (WEIGHT AND AGE BASED DOSAGE CALCULATOR)
+
+START
+
+FUNCTION input_check:
+    CHECKS validity of user inputs (must be numeric and must not be blank)
+    RETURN valid input 
+
+FUNCTION age group determination:
+    Neonates = 0-29 days
+    Infants = 30 days to 3 months
+    Infant_child = 3 months to 12 months or child 1 to 12 years
+    adults = 12 years and older
+    RETURN patient_type
+
+FUNCTION dosage_calculation based on patient age and weight:
+    IF patient is pedia:
+        //compute following based on clinically established recommendations:
+            max_singe_dose_mg,
+            max_dosage_day, 
+            regular dose 
+    ELSE if patient is adult:
+            max_single_dose_mg,
+            max_dosage_day, 
+            regular_dose
+    END IF 
+    RETURN results
+
+//OBTAIN USER INPUT
+ASK age in years/months for age_group_determination
+
+    IF less than 1 year:
+        ASK age in months:
+    END IF
+
+ASK weight in kg
+
+COMPUTE dosage via dosage_calculation
+COMPUTE dose per commercially available formulations
+
+//OUTPUT
+PRINT warning if applicable 
+PRINT recommended dosage and dose per formulation
+
+END 
+
+
+References:
+General Dosage Rounding. University of Tennessee Health Science Center - College of Nursing. (n.d.). https://uthsc.edu/nursing/documents/general-dosage-rounding-rules.docx 
+World Health Organization. (2012). Chapter 3 - Pharmacological Treatment Strategies. In WHO guidelines on the pharmacological treatment of persisting pain in children with medical illnesses. essay. 
+   Retrieved from https://pubmed.ncbi.nlm.nih.gov/23720867/. 
+Guideline for safe paracetamol use - January 2023. Queensland Health. 
+    https://www.health.qld.gov.au/__data/assets/pdf_file/0016/1211443/guideline-safe-paracetamol-use.pdf 
+Paracetamol: Uses, Dosage, Side Effects and More | MIMS Philippines. https://www.mims.com/philippines/drug/info/paracetamol?mtype=generic 
+Philippine National formulary Volume 1, 8th edition. Pharmaceutical Division, DOH. https://www.fda.gov.ph/wp-content/uploads/2021/03/PNDF-2008.pdf 
+W3schools.com. Python Built-in Functions. (n.d.). https://www.w3schools.com/python/python_ref_functions.asp 
+
+Built in functions used
+1. input()
+2. round()
+3. zip()
+4. list()
+5. print()
