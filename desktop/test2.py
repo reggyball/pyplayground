@@ -222,13 +222,13 @@
 #CONDITIONALS
 #Create a program that determines the largest number among the four inputs of the user.
 
-prompts = ["first", "second", "third", "fourth"]
-larger = float('-inf')
-for i in range(4):
-    num = float(input(f"Enter {prompts[i]} number: "))
-    if num > larger:
-        larger = num
-print(larger)
+# prompts = ["first", "second", "third", "fourth"]
+# larger = float('-inf')
+# for i in range(4):
+#     num = float(input(f"Enter {prompts[i]} number: "))
+#     if num > larger:
+#         larger = num
+# print(larger)
 
 
 # prompts = ["first", "second", "third", "fourth"]
@@ -249,4 +249,154 @@ print(larger)
 #         larger = num
 # print(larger)
 
+#---------------------------------------------------------------------------------------------
+# Create a program that computes the BMI of a person and determines whether he is underweight, normal, or overweight.
 
+# The Body Mass Index (BMI) is computed using the following formula:
+# BMI = weight in kg / (height in m)^2
+# BMI Categories:
+# Underweight = <18.5
+# Normal weight = 18.5–24.9
+# Overweight = 25–29.9
+# Obesity = BMI of 30 or greater
+
+# Sample run of the program:
+# Enter height (m): 1.52
+# Enter weight (kg): 59
+# Your BMI: 25.5 kg/m2 (Overweight)
+
+#obtain user input
+# height = float(input("Enter height (m): "))
+# weight = float(input("Enter weight (kg): "))
+
+# #compute for BMI
+# BMI = weight/height**2
+# BMI = round(BMI, 1)
+
+# #categorize BMI
+# if BMI >= 30:
+#     category = "Obesity"
+# elif BMI >= 25 and BMI <= 29.9:
+#     category = "Overweight"
+# elif BMI >= 18.5 and BMI <= 24.9:
+#     category = "Normal weight"
+# else:
+#     category = "Underweight"
+
+# #print output
+# print(f"Your BMI: {BMI} kg/m2 ({category})")
+
+#---------------------------------------------------------------------------------------------
+# ITERATIVE
+# Twin 'a'
+# Continuously ask an input until the user enters two consecutive ‘a’.
+
+# while True:
+#     ax = input("Enter an input: ")
+#     if ax == "a":
+#         bx = input("Enter an input: ")
+#         if ax == bx:
+#           if bx == "a":
+#              break    
+
+# counter = 0
+# while counter != 2:
+#     ax = input("Enter an input: ")
+#     if ax == "a":
+#         counter += 1
+#     else: 
+#         counter = 0
+
+
+#---------------------------------------------------------------------------------------------
+#Write a program that prints the integer cube root of an integer x. If x is not a perfect cube, print a message saying so. 
+
+# Example:	x = -27 -> cube root is -3
+# 		x = 5 -> not a perfect cube
+
+# while abs(a := int(input("Enter an integer: "))) != round(abs((a**(1/3))))**3:
+#    print("not perfect cube")
+# if a < 0:
+#     cube_root = round(abs(-(a)**(1/3)))
+#     cube_root = -cube_root
+# else:
+#     cube_root = round(a**(1/3))
+# print(f"Cube root is {cube_root}")
+
+
+# a = int(input("Enter an integer: "))
+# counter2 = 0
+# counter3 = 0
+# counter5 = 0
+
+# while a != 1:
+#     if a % 2 == 0:
+#         a = a / 2
+#         counter2 += 1
+#     if a % 3 == 0:
+#         a = a /3
+#         counter3 = +1
+#     if a % 5 == 0:
+#         a = a /5 
+#         counter5 = +1
+# print(counter2, counter3, counter5)
+
+#----------------------------------------------------------------------------
+#The Kingdom of Kapatid has banned the numbers 2 and 7. 
+# Given a range of values n and m as user’s input, print the numbers from n to m (inclusive) that are not multiples of 2 and 7 
+# and do not contain the values 2 and 7 such as 72, 17, 22, 42, and 77.
+
+#obtain user input
+# n = int(input("Enter n: "))
+# m = int(input("Enter m: ")) 
+
+# #create an empty list for eligible values 
+# value = []
+
+# #loop through numbers from n to m 
+# for i in range(n, m+1):                           
+#     if i % 2 == 0 or i % 7 == 0:                 #skips numbers divisible by 2 or 7
+#         continue
+#     if "7" in str(i) or "2" in str(i):           #skips numbers with digits 7 or 2
+#         continue
+#     else:                                        #adds in the list: numbers that satisfied given conditions
+#         value += [i]
+# print(value)                                    #prints the final list 
+
+#----------------------------------------------------------------------------
+#Merry Christmas!
+# Input a positive integer n and draw a Christmas tree-shaped figure of chars, consisting of n stacked trapezoids, neatly centered on the screen.
+
+
+#----------------------------------------------------------------------------
+# Leap Year
+# Most years have 365 days. However, the time required for the Earth to orbit the Sun is actually slightly more than that. 
+# As a result, an extra day, February 29, is included in some years to correct for this difference. Such years are referred to as leap years. 
+# The rules for determining whether or not a year is a leap year follow:
+
+# Any year that is divisible by 400 is a leap year.
+# Of the remaining years, any year that is divisible by 100 is not a leap year.
+# Of the remaining years, any year that is divisible by 4 is a leap year.
+# All other years are not leap years.
+# Write a program prints the leap years from 1900 to 2018.
+
+#----------------------------------------------------------------------------
+# #FUNCTIONS AND RECURSIONS
+
+# Pascal's Triangle is a recursive definition tool, useful for calculating coefficients in the expansion of the polynomial (x+a)^n. 
+# Each number in the triangle is situated by coordinates relating to its row and column within that row. 
+# The number in each position is defined as the sum of the number directly above it and the number to its upper left.
+# Implement a recursive function that returns the value in the ith row and jth column of the Pascal's triangle. 
+
+# # this function returns the value at the ith row and jth column of the Pascal's Triangle
+def pascal (row, col):
+    if row == 1 or col == 1 or col == row + 1:                    #base cases
+        return 1
+    if row == col or col == 2:                                   #base case - unnecessary but reduces stack
+        return row
+   
+    return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
+print (pascal (5,3)) # the output is 10
+
+
+       
