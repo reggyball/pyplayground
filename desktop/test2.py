@@ -389,14 +389,17 @@
 # Implement a recursive function that returns the value in the ith row and jth column of the Pascal's triangle. 
 
 # # this function returns the value at the ith row and jth column of the Pascal's Triangle
-def pascal (row, col):
-    if row == 1 or col == 1 or col == row + 1:                    #base cases
-        return 1
-    if row == col or col == 2:                                   #base case - unnecessary but reduces stack
-        return row
+# def pascal (row, col):
+#     if row == 1 or col == 1 or col == row + 1:                    #base cases
+#         return 1
+#     if row == col or col == 2:                                   #base case - unnecessary but reduces stack
+#         return row
    
-    return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
-print (pascal (5,3)) # the output is 10
+#     return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
+# print (pascal (5,3)) # the output is 10
+
+
+
 
 
        
