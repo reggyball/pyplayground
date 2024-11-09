@@ -394,28 +394,14 @@
 #         return 1
 #     if row == col or col == 2:                                   #base case - unnecessary but reduces stack
 #         return row
+# def pascal (row, col):
+#     if row == 1 or col == 1 or col == row + 1:                    #base cases
+#         return 1
+#     if row == col or col == 2:                                   #base case - unnecessary but reduces stack
+#         return row
    
-#     return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
-# print (pascal (5,3)) # the output is 10
-#----------------------------------------------------------------------------
-x = 4
-
-# for i in range(2, x//2):
-#     if (x%i == 0):
-#         print("Not prime")
-#         break
-# else:
-#     print("prime")
-
-# print(list(range(2, x//2)))
+    return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
+print (pascal (5,3)) # the output is 10
 
 
-i = 2
-while (i <= x//2):
-    if (x%i == 0):
-        print("Not prime")
-        break
-    else:
-        i+=1
-else:
-    print("Prime")
+       
