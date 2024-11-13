@@ -400,8 +400,9 @@
 #     if row == col or col == 2:                                   #base case - unnecessary but reduces stack
 #         return row
    
-    return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
-print (pascal (5,3)) # the output is 10
+#     return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
+# print (pascal (5,3)) # the output is 10
 
-
+#--------------------------------------------------------------------------
+#Narcisstic 
        

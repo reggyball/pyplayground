@@ -1,0 +1,12 @@
+NARCISSISTIC NUMBER
+ An n-digit number that is the sum of the n th powers of its digits is called an n-narcissistic number.
+ create a program that prints narc numbers from 1 to input(n)
+
+ Get input(n)
+
+#Get number of digits
+ Loop through numbers 1 to n
+  per number(i), know number of digits(a)
+
+
+#per number (i), raise each digit^ to a 
