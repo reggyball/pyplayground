@@ -23,7 +23,7 @@ def pigLatin (s):
     temp_list = []
     detect_vowels = []
 
-#condition no. 5 and no.1
+#rules no. 5 and no.1
 #checks if word length is 1 and if word contains special characters 
     if len(s) != 1:
         for i in s:                                                                        #if current letter(i) is not in vowel or consonant, hence a special character
@@ -40,14 +40,14 @@ def pigLatin (s):
         if i in temp_list:
             detect_vowels.append(temp_list.index(i))
 
-#conditions no. 2,3,4,6
+#rules no. 2,3,4,6
     detect_vowels.sort()                                                                    #sort to obtain first instance of vowel, first element = first instance of vowel except for 0
-    if len(detect_vowels) == 0:                                                             #condition 6,2. if no vowels recorded on list (list is empty) hence, return original word with capitalized first letter
+    if len(detect_vowels) == 0:                                                             #rules 6,2. if no vowels recorded on list (list is empty) hence, return original word with capitalized first letter
         return s.capitalize()
-    elif 0 in detect_vowels:                                                                #condition 4. if 0 is recorded in list it means first letter is a vowel->  return word starting with X with suffix 'ay'
+    elif 0 in detect_vowels:                                                                #rule 4. if 0 is recorded in list it means first letter is a vowel->  return word starting with X with suffix 'ay'
         pig_fin = "X" + s.lower() + "ay"
         return pig_fin
-    elif len(detect_vowels) != len(s):                                                      #condition 3,2. if at this point the length of detect_vowels and the original word (s) is unequal, meaning the word is a mix of consonants and vowels.                                                                               
+    elif len(detect_vowels) != len(s):                                                      #rules 3,2. if at this point the length of detect_vowels and the original word (s) is unequal, meaning the word is a mix of consonants and vowels.                                                                               
         first_vow = detect_vowels[0]                                                           #first element in detect_vowel is the index of first instance of vowel in the word(s) --> gives the location of the first vowel (enables slicing at the right index to meet condition 3)
         pig_fin = s[first_vow:] + s[:first_vow] + "ay"                                         #concatenation of the final word, slice of [first_vowel to end] + [start to first vowel-1] + suffix ay" 
         return pig_fin.capitalize()                                                            #capitalize the final concatenated word and return it
