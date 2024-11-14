@@ -1,0 +1,52 @@
+PROGRAM PIGLATIN
+
+START
+
+FUNCTION PIGLATIN (STRING):
+    DEFINE STRING CONSONANTS
+    DEFINE STRING VOWELS
+    DEFINE EMPTY STRING - PIG
+
+    DEFINE EMPTY LIST - TEMP
+
+    START IF
+    IF LEN(STRING) != 1:
+      START FOR LOOP
+        ITERATE THROUGH STRING AS SEQUENCE
+            IF STRING[I] NOT IN CONSONANTS AND VOWELS:
+                RETURN STRING
+            ELSE:
+                APPEND TO TEMP LIST
+                RETURN TEMP
+    ELSE:
+     RETURN STRING + "Iyay"
+    END IF
+
+    detect_vowels = []
+    START FOR LOOP
+     ITERATE THROUGH VOWELS(I) AS SEQUENCE:
+      IF I is in temp:
+         detect_vowels += TEMP.INDEX(I)
+    END LOOP
+
+    DETECT_VOWELS SORT
+    IF len(DETECT_VOWELS) == 0:
+        return STRING.Capitalize
+    IF 0 in detect_vowels: //STARTS WITH VOWEL
+       PIG = "X" + STRING.LOWER() + "ay
+    ELIF len(Detect_Vowels) != len(string):
+       first_vow = DETECT_VOWELS[0] #2
+       pig = string[first_vow:] + string[:first_vow] + 'ay'
+       pig.capitalize
+    
+
+
+         
+
+            
+              
+         
+            
+
+
+
