@@ -453,28 +453,27 @@
 # else:
 #     print("Not a palindrome")
 
-def clean(x):
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    y = ""
+# def clean(x):
+#     alphabet = "abcdefghijklmnopqrstuvwxyz"
+#     y = ""
 
-    for i in x:
-        if i in alphabet:
-            y += i
-    return y
-
-
-def ispalindrome(x):
-    y = clean(x)
-
-    if y == y[::-1]:
-        print("Palindrome")
-    else:
-        print("Not a palindrome")
+#     for i in x:
+#         if i in alphabet:
+#             y += i
+#     return y
 
 
-x = input("Give me a word: ")
-ispalindrome(x)
+# def ispalindrome(x):
+#     y = clean(x)
 
+#     if y == y[::-1]:
+#         print("Palindrome")
+#     else:
+#         print("Not a palindrome")
+
+
+# x = input("Give me a word: ")
+# ispalindrome(x)
 
 
 
@@ -484,40 +483,55 @@ ispalindrome(x)
 # Problem statement: Create a function that performs a Run Length Encoding (RLE) data compression algorithm on a given bitmap image represented by a string of 1’s (black) and 0’s (white). 
 # The function accepts a string then returns the compressed string using RLE.
 
-# x = input("Enter a bitmap image: ")
-
-# counta = 0
-# countb = 0
-
-# counting = []
-
-# # def counts (x):
-# #     for i in x:
-# #         a = x[0]
-# #         if i == a:
-# #             counta += 1
-# #         else:
-# #             b = i
-# #             if i == b:
-# #                 countb += 1
-# #     return counta, countb
+# x = input("Enter a bitmap image: "  )
 
 
-# def counts(x):
-#     while i == x[0]:
-#         count_a += 1
-#     counting[] += count_a
+#-------------------------------------------------------------------------------------------
+#LISTS
+#Building a list of random integers
+#Problem Statement: Create a program that builds a list of 10 random integers from 1 to 100. The integers in the list must be unique.
+# import random
 
+# list1 = []
 
-# a= len(x)
+# i = 0
+# while i < 10:
+#     random_int = random.randint(1, 101)
+#     while random_int in list1:
+#         random_int = random.randint(1, 101)
+#     else:
+#         list1.append(random_int)
+#     i += 1
 
+# print(list1)
 
-# compressed = counts(x)
-# print(compressed)
-        
-        
-   
-    
+#------------------------------------------------------------------------------------------- 
+# Word-unit palindrome
+# Problem Statement: Create a program that determines whether a string is a word-unit palindrome or not.
 
+string = input("Enter a string: ")
+string = string.lower()
+
+def clean(string):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    newstr = ""
+    for i in string:
+        if i in alphabet:
+                newstr += i
+    return newstr
+
+                
+def ispalindrome(string):
+    words = string.split(" ")
+
+    for i in range(len(words)):
+        words[i] = clean(words[i])
+
+    if words == words[::-1]:
+         print("Palindrome")
+    else:
+         print("Not a palindrome")
+
+ispalindrome(string)
 
 
