@@ -16,7 +16,7 @@
 ########################################################
 
 def pigLatin (s):
-#initialize consonant,vowels,empty strings and list. Consonants and vowels will serve as the basis for the conditions. Empty strings,lists as containers
+#initialize consonant,vowels,empty strings and list. Consonants and vowels will serve as the basis for the rules/conditions. Empty strings,lists as containers
     consonants = "bcdfghjklmnpqrstvwxyz"           
     vowels = "aeiou"
     pig_fin = ""
@@ -48,8 +48,8 @@ def pigLatin (s):
         pig_fin = "X" + s.lower() + "ay"
         return pig_fin
     elif len(detect_vowels) != len(s):                                                      #rules 3,2. if at this point the length of detect_vowels and the original word (s) is unequal, meaning the word is a mix of consonants and vowels.                                                                               
-        first_vow = detect_vowels[0]                                                           #first element in detect_vowel is the index of first instance of vowel in the word(s) --> gives the location of the first vowel (enables slicing at the right index to meet condition 3)
-        pig_fin = s[first_vow:] + s[:first_vow] + "ay"                                         #concatenation of the final word, slice of [first_vowel to end] + [start to first vowel-1] + suffix ay" 
+        first_vow = detect_vowels[0]                                                           #first element in detect_vowel is the index of first instance of vowel in the word(s) --> gives the location of the first vowel (enables slicing at the right index to meet rule 3)
+        pig_fin = s[first_vow:] + s[:first_vow] + "ay"                                         #concatenation of the final word =  slice of s[first_vowel to end] + [start to first vowel-1] + suffix ay" 
         return pig_fin.capitalize()                                                            #capitalize the final concatenated word and return it
     
 ########################################################
