@@ -41,7 +41,7 @@ def pigLatin (s):
             detect_vowels.append(temp_list.index(i))
 
 #rules no. 2,3,4,6
-    detect_vowels.sort()                                                                    #sort to obtain first instance of vowel, first element = first instance of vowel except for 0
+    detect_vowels.sort()                                                                    #sort to obtain first instance of vowel, first element = index of first instance of vowel except for 0
     if len(detect_vowels) == 0:                                                             #rules 6,2. if no vowels recorded on list (list is empty) hence, return original word with capitalized first letter
         return s.capitalize()
     elif 0 in detect_vowels:                                                                #rule 4. if 0 is recorded in list it means first letter is a vowel->  return word starting with X with suffix 'ay'
