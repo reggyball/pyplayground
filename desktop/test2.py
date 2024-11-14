@@ -403,6 +403,121 @@
 #     return pascal(row-1, col) + pascal(row-1, col-1)            #recursive case
 # print (pascal (5,3)) # the output is 10
 
-#--------------------------------------------------------------------------
-#Narcisstic 
-       
+#_________________________________________________________________________
+#STRINGS
+#_________________________________________________________________________
+#Problem statement: Create a program that changes the character ‘a’ in the given string to a different character.
+
+# import random
+# import string
+
+# x = input("Give me a string: ")
+# y = input("Replace which letter? ")
+# random_char = random.choice(string.ascii_lowercase)
+
+# x = x.replace(y, random_char)
+# print(x)
+# #----------------------------------------
+# x = input("Give me a string: ")
+# y = input("Replace a with? ")
+
+# x = x.replace("a", y)
+# print(x)
+
+#----------------------------------------
+# def modify(x, y):
+#     modified = ""
+
+#     for i in x:
+#         if i == "a":
+#             modified += y
+#         else:
+#             modified += i
+#     return modified
+
+# x = input("Give me a string: ")
+# y = input("Replace a with? ")
+# print(modify(x, y))
+
+#-----------------------------------------------------------------------------------------
+#Palindrome
+#Problem statement: Create a program that determines whether a string is a palindrome or not.
+
+# x = input("Give me a word: ")
+# x = x.lower().replace(" ", "")
+# y = x[::-1]
+# print(x)
+# print(y)
+# if x == y:
+#     print("Palindrome siya")
+# else:
+#     print("Not a palindrome")
+
+def clean(x):
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    y = ""
+
+    for i in x:
+        if i in alphabet:
+            y += i
+    return y
+
+
+def ispalindrome(x):
+    y = clean(x)
+
+    if y == y[::-1]:
+        print("Palindrome")
+    else:
+        print("Not a palindrome")
+
+
+x = input("Give me a word: ")
+ispalindrome(x)
+
+
+
+
+#-----------------------------------------------------------------------------------------
+#Run-length encoding
+
+# Problem statement: Create a function that performs a Run Length Encoding (RLE) data compression algorithm on a given bitmap image represented by a string of 1’s (black) and 0’s (white). 
+# The function accepts a string then returns the compressed string using RLE.
+
+# x = input("Enter a bitmap image: ")
+
+# counta = 0
+# countb = 0
+
+# counting = []
+
+# # def counts (x):
+# #     for i in x:
+# #         a = x[0]
+# #         if i == a:
+# #             counta += 1
+# #         else:
+# #             b = i
+# #             if i == b:
+# #                 countb += 1
+# #     return counta, countb
+
+
+# def counts(x):
+#     while i == x[0]:
+#         count_a += 1
+#     counting[] += count_a
+
+
+# a= len(x)
+
+
+# compressed = counts(x)
+# print(compressed)
+        
+        
+   
+    
+
+
+
