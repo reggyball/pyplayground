@@ -509,29 +509,63 @@
 # Word-unit palindrome
 # Problem Statement: Create a program that determines whether a string is a word-unit palindrome or not.
 
-string = input("Enter a string: ")
-string = string.lower()
+# string = input("Enter a string: ")
+# string = string.lower()
 
-def clean(string):
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    newstr = ""
-    for i in string:
-        if i in alphabet:
-                newstr += i
-    return newstr
+# def clean(string):
+#     alphabet = "abcdefghijklmnopqrstuvwxyz"
+#     newstr = ""
+#     for i in string:
+#         if i in alphabet:
+#                 newstr += i
+#     return newstr
 
                 
-def ispalindrome(string):
-    words = string.split(" ")
+# def ispalindrome(string):
+#     words = string.split(" ")
 
-    for i in range(len(words)):
-        words[i] = clean(words[i])
+#     for i in range(len(words)):
+#         words[i] = clean(words[i])
 
-    if words == words[::-1]:
-         print("Palindrome")
-    else:
-         print("Not a palindrome")
+#     if words == words[::-1]:
+#          print("Palindrome")
+#     else:
+#          print("Not a palindrome")
 
-ispalindrome(string)
+# ispalindrome(string)
+
+#------------------------------------------------------------------------------------
+#NARCISSTIC NUMBER
+
+x = int(input("Enter an integer: "))
+
+for i in range(1, x+1):
+
+    #count no of digits of i
+    temp = i
+    nDigits = 0
+    while temp > 0:
+        temp = temp//10
+        nDigits += 1
+
+    #get the sum of the computed nth power of the digits 
+    sum = 0
+    temp = i
+    while temp > 0:
+        digit = temp%10
+        temp = temp//10
+
+        #compute for the nth power of the current digit
+        product = 1
+        for j in range(1, nDigits+1):
+            product *= digit
+        
+        sum += product
+
+    if sum == i:
+        print(i, "is a narcissistic number")
+
+
+        
 
 

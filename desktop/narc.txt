@@ -9,4 +9,8 @@ NARCISSISTIC NUMBER
   per number(i), know number of digits(a)
 
 
-#per number (i), raise each digit^ to a 
+#per number (i), raise each digit^ to (a) 
+#sum the raised digits
+
+#if sum = n
+  print number is narc
