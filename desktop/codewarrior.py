@@ -1,14 +1,37 @@
-#  ###################################### Beginner Series #1 School Paperwork ###########################################
-def paperwork(n,m):
-    return n * m if n > 0 and m > 0 else 0                   #ternary conditional operator/short-hand if else
 
-#testcases
-print(paperwork(5,5))   #25
-print(paperwork(1,2))   #2
-print(paperwork(-5,5))  #0
-print(paperwork(5,-5))  #0
-print(paperwork(-5,-5)) #0
-print(paperwork(5,0))   #0, 
+##################################### REVERSED SEQUENCE ##############################################################
+def reverse_seq(n):
+    return list(range(1, n+1))[::-1]
+
+#alternative
+def reverse_seq(n):
+    return list(range(n, 0, -1))
+
+#testcase
+print(reverse_seq(5)) #[5,4,3,2,1]
+
+# ###################################### Convert a string to an array #################################################
+# def string_to_array(s):
+#     return s.split(" ")                 #" " - replaces output ng empty string; if empty by default split removes all whitespace
+
+# #testcases
+# print(string_to_array("Robin Singh"))         #["Robin", "Singh"])
+# print(string_to_array("CodeWars"))           #["CodeWars"])
+# print(string_to_array("I love arrays they are my favorite")) #["I", "love", "arrays", "they", "are", "my", "favorite"])
+# print(string_to_array("1   2 3"))                #["1", "2", "3"])
+# print(string_to_array(""))                     # [""]
+
+# ###################################### Beginner Series #1 School Paperwork ###########################################
+# def paperwork(n,m):
+#     return n * m if n > 0 and m > 0 else 0                   #ternary conditional operator/short-hand if else
+
+# #testcases
+# print(paperwork(5,5))   #25
+# print(paperwork(1,2))   #2
+# print(paperwork(-5,5))  #0
+# print(paperwork(5,-5))  #0
+# print(paperwork(-5,-5)) #0
+# print(paperwork(5,0))   #0, 
 
 #  ###################################### BOOLEAN TO STRING #############################################################
 # def boolean_to_string(b):
