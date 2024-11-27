@@ -1,0 +1,112 @@
+Pero I think ito yung structure na mag wo-work for our search logic:
+{
+      root_letter_a: [list of all words that share root_letter_a],
+      root_letter_b: [list of all words that share root_letter_b],
+      ...
+}
+
+^ this is a dictionary structure, where you have key-value pairs. keys = root_letter_a and root_letter_b
+values = [list of all words sharing root_letter_a], [list of all words sharing root_letter_b]
+
+*pwede kasi yung first pasada nung word search function is to check if mafo-form muna yung 3 root letters. if di sya mahanap, skip group of words sharing the root letters para di sayang computing resources
+
+So yung roots/keys, composed of the first 3 letters of a word. Tapos yung values ay yung list of words mismo 🙂
+
+
+Yung keys yung pang-"testing" natin bale. If mabubuo yung key or first 3 letters, we can proceed searching for the words na naka group under it. Otherwise, skip agad yung group of words na yun
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------
+PSEUDOCODE FOR LOADING LIBRARY OF WORDS FOR BOGGLE 
+
+PARAMETERS
+grid - vowel list and consonant list generated from their respective generators returned as grid
+	condense the 2d array(grid) into one list -> Letter_list
+min - minimum no of letters in a word, set to 3 by default. To increase difficulty, assign min when fxn is called
+filename - raw source of words, set to "boggle.txt". To change word list, assign filename when called
+
+Letter list(array) = [ randomly generated vowels, consonants(uncommon and common) ] 
+- which position doesnt matter 
+
+PREP
+	1. grid (2d array) - transform as one list (creates letter_list_ref)
+		flatten grid as a list using list comprehension and save as letter_list_ref
+	
+	2. max - will be the basis of maximum no of letters in a word sa filter
+		determine the max and min val
+			 max = len(letter_list_ref)
+			 min = default(3) based on specs ni mam
+
+	3. import re 
+
+ START F BODY
+
+	Accept letter_list as a parameter to the function
+	Initialize valid_word_dict
+
+	Create filters to filter the raw boggle.txt file		
+		1. To filter based on the word length based on the grid size (minimum=3 and maximum)		
+			
+			open boggle.txt
+			strip line with trailing spaces and save as the 'word'
+			check each if word length meets min and max:
+				create the letter_list based on letter_list_ref
+
+				if word has qu: tranform string to an array to treat 'qu' as one element
+		
+				2. To filter based on the word structure - all letters of the word must be in the letter_list 		
+					
+					loop through each letter of the current word:
+						check if current letter of word is in letter_list:
+							del first instance of letter in letter_list
+							continue
+						else:
+							move to next word
+
+					if all letters in letter_list:
+						check if first 3 letter (f3l) of the current word is in the valid_word_dict.keys():
+							if yes, check if the word is in the values of f3l key:
+									if yes, ignore continue
+							add the word to the key/f3l -> dict[f3l].append(word)
+						else wala pa:
+							create key from the f3l of the current word
+							dict[f3l] = [word]			
+						
+		return valid_word_dict		
+END FILTER FUNCTION
+
+test called
+def word_search():
+    # game start!
+    # gridsize, timeroption = menu()
+    # gridTemplate = create_grid(gridsize)
+    # grid = randomizer(gridTemplate)
+    # print_grid(grid)
+    grid = [['a','i', 'o'],
+            ['c', 't', 'k'],
+            ['r', 'e', 'qu']]
+    valid_words = loadWordLibrary(grid)
+    print(valid_words)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
