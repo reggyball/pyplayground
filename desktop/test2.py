@@ -537,33 +537,33 @@
 #------------------------------------------------------------------------------------
 #NARCISSTIC NUMBER
 
-x = int(input("Enter an integer: "))
+# x = int(input("Enter an integer: "))
 
-for i in range(1, x+1):
+# for i in range(1, x+1):
 
-    #count no of digits of i
-    temp = i
-    nDigits = 0
-    while temp > 0:
-        temp = temp//10
-        nDigits += 1
+#     #count no of digits of i
+#     temp = i
+#     nDigits = 0
+#     while temp > 0:
+#         temp = temp//10
+#         nDigits += 1
 
-    #get the sum of the computed nth power of the digits 
-    sum = 0
-    temp = i
-    while temp > 0:
-        digit = temp%10
-        temp = temp//10
+#     #get the sum of the computed nth power of the digits 
+#     sum = 0
+#     temp = i
+#     while temp > 0:
+#         digit = temp%10
+#         temp = temp//10
 
-        #compute for the nth power of the current digit
-        product = 1
-        for j in range(1, nDigits+1):
-            product *= digit
+#         #compute for the nth power of the current digit
+#         product = 1
+#         for j in range(1, nDigits+1):
+#             product *= digit
         
-        sum += product
+#         sum += product
 
-    if sum == i:
-        print(i, "is a narcissistic number")
+#     if sum == i:
+#         print(i, "is a narcissistic number")
 
 #----------------------------------------------------------------------------------------------------------
 # Write a program that determines if the integer input of the user is divisible by 2 only, divisible by 3 only, divisible by both 2 and 3, 
@@ -579,5 +579,317 @@ for i in range(1, x+1):
 # else:
 #     print("Not divisible by 2 or 3")
         
+################################ DICTIONARIES #############################################
+
+# months = {1: "Jan", 2: "Feb", 3: "March", 4: "April", 5: "May", 6: "Jun", 7: "Jul"}
+
+# #ACCESS THE VALUE
+
+# #using key
+# print(months[1])
+
+# #using .get()
+# x = months.get(2)
+# print(x)
+
+# #using a default with .get()
+# x = months.get(9)
+# print(x)      #prints None
+# x = months.get(9, "Sep")
+# print(x)
 
 
+# #ACCESS ALL KEYS/VALUES
+
+# #returns dict objects
+# print("-------------------DICT OBJECTS--------------")
+# allK = months.keys()
+# print(allK)
+# allV = months.values()
+# print(allV)
+
+# #return as a pair, dict object
+# pairs = months.items()
+# print(pairs)
+
+
+# #returns list
+# print("---------------------LISTS------------------")
+# print(list(allK))
+# print(list(allV))
+# print(list(pairs))
+
+# #return individual strings
+# print("---------------INDIVIDUAL STRINGS-----------")
+# for key in allK:
+#     print(key)
+# print("\n")
+      
+# for val in allV:
+#     print(val)
+# print("\n")
+
+# for pair in pairs:
+#     print(pair)
+
+
+# #ACCESSING ELEMENTS USING LOOP
+# for k, v in months.items():
+#     print(k,v)
+
+# for k in months:
+#     print("keys: ", k, "values: ", months[k])
+
+#NESTED DICTIONARIES
+# my_courses = {
+#                 1: {"Code": "CMSC 202", "Title": "Principles of Programming"},
+#                 2: {"Code": "CMSC 201", "Title": "Discrete Mathematics"}
+#             }
+
+# for course in my_courses:
+#     print("course:", course)
+#     for k, v in my_courses[course].items():
+#         print(k, v)
+
+#DICTIONARY COMPREHENSIONS
+
+# dict_name = {key:value for key, value in zip(list1, list2)}
+
+# names = ['Appa', 'Sunny', 'Theo']
+# colors = ['white/black', 'Orange/white', 'Calico']
+# cat_profile = {key:value for key, value in zip(names, colors)}
+# print(cat_profile)
+
+#------------------------------------------------------------------
+#Problem: Create a program that stores the SMS keywords for a mobile service and the message that the service will send given the keyword.
+
+
+# def addSMSkeywords(SMSKeywords):
+#     keyword = input("\nEnter keyword: ")
+
+#     if keyword in SMSKeywords.keys():
+#         print("Keyword exists")
+#     else: 
+#         message = input("Enter the message: ")
+#         SMSKeywords[keyword] = message
+
+#     return SMSKeywords
+
+# def printSMSKeywords(SMSKeywords):
+#     print("\nSMS Keywords and Messages in the Dictionary")
+#     for k, v in SMSKeywords.items():
+#         print(f"{k} : {v}")
+
+# def deleteSMSKeywords(SMSKeywords):
+#     keyword = input("\nEnter keyword for deletion: ")
+
+#     if keyword in SMSKeywords.keys():
+#         del SMSKeywords[keyword]
+#     else:
+#         print("\nKeyword not in dictionary")
+#     return SMSKeywords
+
+# def searchSMSKeywords(SMSKeywords):
+#     keyword = input("\nEnter keyword you want to search: ")
+
+#     if keyword in SMSKeywords.keys():
+#        print(keyword,"\t\t", SMSKeywords[keyword])
+#     else:
+#         print("\nKeyword not in dictionary")
+    
+# def menu ():
+#     print("\n1. Add an SMS Keyword")
+#     print("2. Print all SMS Keywords")
+#     print("3. Delete an SMS Keyword")
+#     print("4. Search an SMS Keyword")
+#     print("0. Quit")
+#     choice = int(input("Your choice: "))
+#     return choice
+
+# SMSKeywords = {}
+
+# while True:
+#     choice = menu()
+#     if choice == 1:
+#         SMSKeywords = addSMSkeywords(SMSKeywords)
+#     elif choice == 2:
+#         printSMSKeywords(SMSKeywords)
+#     elif choice == 3:
+#         SMSKeywords = deleteSMSKeywords(SMSKeywords)
+#     elif choice == 4:
+#         searchSMSKeywords(SMSKeywords)
+#     elif choice == 0:
+#         print("\nThanks! Bye!")
+#         break
+#     else:
+#         print("Invalid choice:", choice)
+
+#---------------------------------------------------------------------
+# Practice Problem: Manage Product Information in a Store
+# Create a program that stores product codes for a store and the details of each product (like price and description).
+#  The user should be able to perform the following actions:
+# 1. Add a Product
+# 2. Print All Products
+# 3. Delete a Product
+# 4. Search for a Product
+# 0. Quit
+
+# def addProduct(products):
+#     keyword = input("\nEnter product code: ")
+
+#     if keyword in products.keys():
+#         print("Product code already exists")
+#     else:
+
+#         description = (input("Enter product description: "))
+#         price = (input("Enter product price: "))
+#         products[keyword] = [description, price]
+
+#     return products
+
+# def printProduct(products):
+#     print("\nProduct codes, descriptions and prices")
+
+#     for code in products.keys():
+#         print("Product code:", code)
+#         print("Description:", products[code][0])
+#         print("Price:", products[code][1])
+#         print("\n")
+
+# def delProduct(products):
+#     keyword = input("\nEnter the product code for deletion: ")
+
+#     if keyword in products.keys():
+#         del products[keyword]
+#         print("Successfully deleted", keyword)
+#     else:
+#         print("Product code not found")
+
+#     return products
+
+# def searchProducts(products):
+#     keyword = input("\nEnter the product code: ")
+
+#     if keyword in products.keys():
+#         print("Product code: ", products[keyword])
+#         print("Description: ", products[keyword][0])
+#         print("Code:", products[keyword][1])
+#     else:
+#         print("Product code does not exist")
+
+# def menu():
+#     print("\n1. Add a product")
+#     print("2. Print all products")
+#     print("3. Delete a product")
+#     print("4. Search for a product")
+#     print("0. Quit")
+#     select = int(input("Enter your choice: "))
+#     return select
+
+# products = {}
+
+# while True:
+#     select = menu()
+#     if select == 1:
+#         products = addProduct(products)
+#     elif select == 2:
+#         printProduct(products)
+#     elif select == 3:
+#         delProduct(products)
+#     elif select == 4:
+#         searchProducts(products)
+#     elif select == 0:
+#         print("Thanks, bye")
+#         break
+#     else:
+#         print("Invalid Choice")
+
+##############################################################
+#FILE OPERATIONS
+#Problem: Create a program that stores the SMS keywords for a mobile service and the message that the service will send given the keyword. Use files to store and retrieve data.
+# 1. Add an SMS Keyword and message
+# 2. Print all the Keywords and messages
+# 3. Delete an SMS Keyword
+# 4. Search for a message given a keyword
+
+
+def loadData(filename):                                                 #copy data from file (kung meron) to a dictionary that the program will interact with the whole run
+    SMSKeywords = {}                                                    #initial run -> initialize an empty dictionary
+
+    fileHandle = open(filename, "r")
+    for line in fileHandle:
+        keyword, message = line.split(":") 
+        SMSKeywords[keyword] = message [:-1]
+    fileHandle.close()
+
+    return SMSKeywords
+
+def storeData(filename):
+    fileHandle = open(filename, "w")
+    for keyword, message in SMSKeywords.items():
+        fileHandle.write(keyword + ":" + message + "\n")
+    fileHandle.close()
+
+def addSMSkeywords(SMSKeywords):
+    keyword = input("\nEnter keyword: ")
+
+    if keyword in SMSKeywords.keys():
+        print("Keyword exists")
+    else: 
+        message = input("Enter the message: ")
+        SMSKeywords[keyword] = message
+
+    return SMSKeywords
+
+def printSMSKeywords(SMSKeywords):
+    print("\nSMS Keywords and Messages in the Dictionary")
+    for k, v in SMSKeywords.items():
+        print(f"{k} : {v}")
+
+def deleteSMSKeywords(SMSKeywords):
+    keyword = input("\nEnter keyword for deletion: ")
+
+    if keyword in SMSKeywords.keys():
+        del SMSKeywords[keyword]
+    else:
+        print("\nKeyword not in dictionary")
+    return SMSKeywords
+
+def searchSMSKeywords(SMSKeywords):
+    keyword = input("\nEnter keyword you want to search: ")
+
+    if keyword in SMSKeywords.keys():
+       print(keyword,"\t\t", SMSKeywords[keyword])
+    else:
+        print("\nKeyword not in dictionary")
+    
+def menu ():
+    print("\n1. Add an SMS Keyword")
+    print("2. Print all SMS Keywords")
+    print("3. Delete an SMS Keyword")
+    print("4. Search an SMS Keyword")
+    print("0. Quit")
+    choice = int(input("Your choice: "))
+    return choice
+#---------------------------------------------------------------------------------------
+SMSKeywords = loadData("SMSKeywords.txt")
+
+while True:
+    choice = menu()
+    if choice == 1:
+        SMSKeywords = addSMSkeywords(SMSKeywords)
+    elif choice == 2:
+        printSMSKeywords(SMSKeywords)
+    elif choice == 3:
+        SMSKeywords = deleteSMSKeywords(SMSKeywords)
+    elif choice == 4:
+        searchSMSKeywords(SMSKeywords)
+    elif choice == 0:
+        print("\nThanks! Bye!")
+        break
+    else:
+        print("Invalid choice:", choice)
+
+storeData(SMSKeywords, "SMSKeywords.txt")
+
+#-----------------------------------------------
