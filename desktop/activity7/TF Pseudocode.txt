@@ -1,0 +1,48 @@
+PSEUDOCODE FOR TERM FREQUENCY CALCULATOR
+
+START FUNCTION
+
+#create term key list
+
+	Initialize key_list
+	Initialize stopwords_list
+	Initialize alphabet_list 
+	
+	Open stopword.txt
+		copy all stopwords.lower() to stopwords_list
+		close file
+		
+	Open Article.txt file
+		Load article.txt
+		
+		Loop per line 
+			Loop through each words in the article.txt
+				If word is a stop word - ignore
+				else:
+					Remove punctuation marks and special characters
+					term = ""
+					
+					for letter in word:
+						if letter in alphabet_list:
+							term += letter
+							
+					copy term.lower() to key_list
+				
+	close file
+			
+	#compute for no of occurences of each term
+	  
+	nd = len(key-list) 
+	Initialize term_freq_dict
+	
+	for term in key_list:
+		nt = key_list.count(term)
+		tf = nt/nd
+		term_freq_dict[term] = {'count': nt, 'tf': tf}
+		
+		while term in key_list:
+			key_list.remove(term)
+		
+	#save term_freq_dict in term frequency text
+
+	-----------------------------------------------------------------------

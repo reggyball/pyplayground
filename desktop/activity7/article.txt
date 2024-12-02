@@ -1,0 +1,11 @@
+The Rise of Artificial Intelligence
+
+Artificial Intelligence (AI) is changing the world as we know it. AI refers to computer systems built to mimic human intelligence and perform tasks such as recognizing images, speech or patterns, and making decisions. These tasks are done faster and more accurately than humans.
+
+The most common types of AI include machine learning, where computer algorithms are used to autonomously learn from data and information. Deep learning is a subtype of machine learning where neural networks are expanded into vast networks with a huge number of layers that are trained using massive amounts of data.
+
+AI is important because it can help solve immensely difficult issues in various industries, such as entertainment, finance, or health. For example, in healthcare, AI is being used to predict diseases and administer healthcare to patients with chronic illness.
+
+AI technology continues to advance at a rapid pace, powered by advancements in machine learning and deep learning. Some of the AI applications include Siri, Alexa, Tesla, Cogito, Netflix, Pandora, Nest, Flying Drones, Echo and many others.
+
+Understanding and leveraging AI is crucial for technological advancements. AI continues to bring massive transformations in many sectors, and its potential is vast. It is an exciting time to explore applications and implications of AI.

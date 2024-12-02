@@ -1,30 +1,5 @@
-Pero I think ito yung structure na mag wo-work for our search logic:
-{
-      root_letter_a: [list of all words that share root_letter_a],
-      root_letter_b: [list of all words that share root_letter_b],
-      ...
-}
 
-^ this is a dictionary structure, where you have key-value pairs. keys = root_letter_a and root_letter_b
-values = [list of all words sharing root_letter_a], [list of all words sharing root_letter_b]
-
-*pwede kasi yung first pasada nung word search function is to check if mafo-form muna yung 3 root letters. if di sya mahanap, skip group of words sharing the root letters para di sayang computing resources
-
-So yung roots/keys, composed of the first 3 letters of a word. Tapos yung values ay yung list of words mismo 🙂
-
-
-Yung keys yung pang-"testing" natin bale. If mabubuo yung key or first 3 letters, we can proceed searching for the words na naka group under it. Otherwise, skip agad yung group of words na yun
-
-
-
-
-
-
-
-
-
-
---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 PSEUDOCODE FOR LOADING LIBRARY OF WORDS FOR BOGGLE 
 
 PARAMETERS
