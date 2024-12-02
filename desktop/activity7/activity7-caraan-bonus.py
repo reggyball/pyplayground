@@ -1,6 +1,7 @@
 import math
 from pathlib import Path
 
+#activity 7 as a function, calculates count, term frequency of each term in document
 def termfreq(filename):
     key_list = []
     stopwords_list = []
@@ -11,7 +12,7 @@ def termfreq(filename):
             stop_word = line.strip()
             stopwords_list.append(stop_word)
 
-    with open(filename, "r") as file:
+    with open(filename, "r", encoding="utf-8") as file:
         for line in file:
          for word in line.split():
             word = word.lower().strip()
@@ -28,7 +29,6 @@ def termfreq(filename):
 
     nd = len(key_list)
     term_freq = {}
-    print(nd)
 
     while len(key_list) > 0:
         term = key_list[0]
@@ -43,9 +43,15 @@ def termfreq(filename):
     return term_freq
 
 
-#Access directory 
-pathdir = "./bonusfiles/"
-directory = Path(pathdir)
+#Access directory of provided path
+pathdir = input("Enter path directory - Format: ./path/ (if unk, enter for current dir): ")
+
+#defaults pathdirectory as to current if no path was provided by the user
+if pathdir == "":
+    current_dir = Path.cwd()
+    directory = Path(current_dir)
+else:
+    directory = Path(pathdir)
 
 #Obtain all filenames of text files inside the directory
 file_list = [str(file).split("\\")[-1] for file in directory.glob("*.txt")]
@@ -58,7 +64,7 @@ for filename in file_list:
 # print(tf_idf_dict)
 
 #idf = log(total number of documents/number of documents with term t in it)
-a= len(file_list)
+a = len(file_list)
 
 term_keys = []
 for key in tf_idf_dict.keys():
@@ -70,4 +76,5 @@ for key in tf_idf_dict.keys():
         idf = math.log(a/b)
         tf_idf_dict[key][term]['idf'] = idf
 
+# print("")
 print(tf_idf_dict)
