@@ -35,7 +35,10 @@ PREP
 			check each if word length meets min and max:
 				create the letter_list based on letter_list_ref
 
-				if word has qu: tranform string to an array to treat 'qu' as one element
+				word_qu = word
+				
+				If "qu" exists, word_qu will be a list where "qu" is preserved as a single element, and the remaining characters are split individually.
+				If "qu" does not exist, word_qu will simply be the original string word
 		
 				2. To filter based on the word structure - all letters of the word must be in the letter_list 		
 					

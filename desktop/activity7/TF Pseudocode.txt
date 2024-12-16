@@ -46,3 +46,37 @@ START FUNCTION
 	#save term_freq_dict in term frequency text
 
 	-----------------------------------------------------------------------
+BONUS PART
+
+identify available text files from directory
+
+START FUNCTION
+Initialize term_list
+open each file 
+	loop each line and split into words
+	#copy words into a list
+		#remove punctuation
+		term = ""
+		for letter in words,
+			if letter in alphabet:
+				add in term
+		if term is in stop words:
+			ignore
+		else:
+			add to term_listt
+
+--------------------------------------------------------
+START FUNCTION
+
+termfrequency function
+
+Initialize tf_idf_dict
+
+file_list = [file.split("\")[-1] for file in directory.glob("*txt")]
+["doc1.txt", "doc2.txt"...]
+
+for filename in file_list:
+	tf_idf_dict[filename] = termfrequency(filename)
+	
+	
+
