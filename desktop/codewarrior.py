@@ -1,3 +1,15 @@
+# ##################################### VOWEL COUNT ###################################################################
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+def get_count(sentence):
+  return sum(sentence.lower().count(vowel) for vowel in vowels)
+
+print(get_count("aeiou"))
+print(get_count("bcdfghjklmnpqrstvwxz y"))
+print(get_count(""))
+print(get_count("abracadabra"))
+print(get_count("Regina Ann"))
+
 ##################################### STRANGE MARKET ###################################################################
 # def is_loch_ness_monster(string):
 #     if any(phrase in string for phrase in keywords):
@@ -5,23 +17,23 @@
 #     else:
 #         return False
 
-keywords = ["tree fiddy", "3.50", "three fifty"]
+# # keywords = ["tree fiddy", "3.50", "three fifty"]
 
-#alternative
-def is_loch_ness_monster(string):
-    return not not [keyword for keyword in keywords if keyword in string]
+# # #alternative
+# def is_loch_ness_monster(string):
+#     return not not [keyword for keyword in keywords if keyword in string]
 
 #testcases
-print(is_loch_ness_monster("Your girlscout cookies are ready to ship. Your total comes to tree fiddy"))
-print(is_loch_ness_monster("Howdy Pardner. Name's Pete Lexington. I reckon you're the kinda stiff who carries about tree fiddy?"))
-print(is_loch_ness_monster("I'm from Scottland. I moved here to be with my family sir. Please, $3.50 would go a long way to help me find them"))
-print(is_loch_ness_monster("Yo, I heard you were on the lookout for Nessie. Let me know if you need assistance."))
-print(is_loch_ness_monster("I will absolutely, positively, never give that darn Loch Ness Monster any of my three dollars and fifty cents"))
-print(is_loch_ness_monster("Did I ever tell you about my run with that paleolithic beast? He tried all sorts of ways to get at my three dolla and fitty cent? I told him 'this is MY 4 dolla!'. He just wouldn't listen."))
-print(is_loch_ness_monster("Hello, I come from the year 3150 to bring you good news!"))
-print(is_loch_ness_monster("By 'tree fiddy' I mean 'three fifty'"))
-print(is_loch_ness_monster("I will be at the office by 3:50 or maybe a bit earlier, but definitely not before 3, to discuss with 50 clients"))
-print(is_loch_ness_monster(""))
+# print(is_loch_ness_monster("Your girlscout cookies are ready to ship. Your total comes to tree fiddy"))
+# print(is_loch_ness_monster("Howdy Pardner. Name's Pete Lexington. I reckon you're the kinda stiff who carries about tree fiddy?"))
+# print(is_loch_ness_monster("I'm from Scottland. I moved here to be with my family sir. Please, $3.50 would go a long way to help me find them"))
+# print(is_loch_ness_monster("Yo, I heard you were on the lookout for Nessie. Let me know if you need assistance."))
+# print(is_loch_ness_monster("I will absolutely, positively, never give that darn Loch Ness Monster any of my three dollars and fifty cents"))
+# print(is_loch_ness_monster("Did I ever tell you about my run with that paleolithic beast? He tried all sorts of ways to get at my three dolla and fitty cent? I told him 'this is MY 4 dolla!'. He just wouldn't listen."))
+# print(is_loch_ness_monster("Hello, I come from the year 3150 to bring you good news!"))
+# print(is_loch_ness_monster("By 'tree fiddy' I mean 'three fifty'"))
+# print(is_loch_ness_monster("I will be at the office by 3:50 or maybe a bit earlier, but definitely not before 3, to discuss with 50 clients"))
+# print(is_loch_ness_monster(""))
 
 #TTTFFFFTFF
 
