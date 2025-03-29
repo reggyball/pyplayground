@@ -171,15 +171,15 @@
 #--------------------------------------------------------------------------------------------
 # Problem 10: Create a recursive function that computes for the factorial of a number n.
 
-# def factorial(n):
-#     #basecase
-#     if n == 1 or n == 0:
-#         return 1
-#     #recursivecase
-#     return n + factorial(n-1)
+def factorial(n):
+    #basecase
+    if n == 1 or n == 0:
+        return 1
+    #recursivecase
+    return n + factorial(n-1)
 
-# n = int(input("Enter number: "))
-# print(factorial(n))
+n = int(input("Enter number: "))
+print(factorial(n))
 
 #--------------------------------------------------------------------------------------------
 # Problem 11: Create a recursive function that computes for the nth fibonacci number. Here are the first few fibonacci numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34. 

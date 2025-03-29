@@ -1,0 +1,4 @@
+inorder
+Left Subtree: The method first explores the left child (if it exists) by calling inorder() on self.leftChild. The left child’s values are collected first.
+Current Node: After the left child’s values are added to the list (recursively), the current node’s value (i.e., self.value) is then added to the list using ordered_node.append(self.value).
+Right Subtree: After processing the current node, the method then explores the right child (if it exists) by calling inorder() on self.rightChild.
