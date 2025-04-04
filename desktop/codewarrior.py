@@ -1,14 +1,59 @@
+''' New Member '''
+def open_or_senior(data):
+  output = []
+
+  for member in data:
+      if member[0] >= 55 and member[1] > 7:
+          output.append("Senior")
+      else:
+          output.append("Open")
+
+  return output
+
+
+def open_or_senior3(data):
+  output = []
+  for (age, handicap) in data:
+    if age >= 55 and handicap > 7:
+      output.append("Senior")
+    else:
+      output.append("Open")
+  return output
+
+print(open_or_senior([(45, 12),(55,21),(19, -2),(104, 20)]))
+print(open_or_senior3([(45, 12),(55,21),(19, -2),(104, 20)]))
+
+def openOrSenior2(data):
+  return ["Senior" if age >= 55 and handicap >= 8 else "Open" for (age, handicap) in data]
+
+################################################################################################
+''' String ends with '''
+# def solution(text, ending):
+#     length = len(ending)
+#     if text[-length:] == ending:
+#         return True
+#     return False
+
+# print(solution( "samurai", "ai"))
+# print(solution( "ninja","ja"))
+# print(solution( "sensei","i"))
+# print(solution( "abc", "abc"))
+# print(solution( "sumo", "omo"))
+
+# def solution2(string, ending):
+#     return string.endswith(ending)
+
 # ##################################### VOWEL COUNT ###################################################################
-vowels = ['a', 'e', 'i', 'o', 'u']
+# vowels = ['a', 'e', 'i', 'o', 'u']
 
-def get_count(sentence):
-  return sum(sentence.lower().count(vowel) for vowel in vowels)
+# def get_count(sentence):
+#   return sum(sentence.lower().count(vowel) for vowel in vowels)
 
-print(get_count("aeiou"))
-print(get_count("bcdfghjklmnpqrstvwxz y"))
-print(get_count(""))
-print(get_count("abracadabra"))
-print(get_count("Regina Ann"))
+# print(get_count("aeiou"))
+# print(get_count("bcdfghjklmnpqrstvwxz y"))
+# print(get_count(""))
+# print(get_count("abracadabra"))
+# print(get_count("Regina Ann"))
 
 ##################################### STRANGE MARKET ###################################################################
 # def is_loch_ness_monster(string):
